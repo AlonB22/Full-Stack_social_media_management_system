@@ -1,0 +1,12 @@
+# Backend API Dependencies
+# ==========================
+
+# Flask - Web framework (like Express.js for Python)
+Flask==3.0.0
+
+# Flask-CORS - Allows frontend to talk to backend
+# (Cross-Origin Resource Sharing)
+flask-cors==4.0.0
+
+# Werkzeug - WSGI utilities (comes with Flask)
+Werkzeug==3.0.1

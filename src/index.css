@@ -1,0 +1,117 @@
+/* 
+  ===========================================
+  GLOBAL STYLES & CSS VARIABLES
+  ===========================================
+  
+  Think of CSS Variables like a paint store - we define all our colors
+  in one place, so if we want to change a color, we only change it once!
+*/
+
+:root {
+  /* Primary Colors - like choosing your main paint colors */
+  --primary-blue: #4299e1;        /* Main blue color for buttons */
+  --primary-green: #48bb78;       /* Green for "Add New Post" button */
+  --primary-red: #e53e3e;         /* Red for likes/hearts */
+  
+  /* Background Colors - the walls of our app */
+  --bg-main: #f5f7fa;             /* Light gray background */
+  --bg-card: #ffffff;             /* White cards */
+  --bg-header: #f5f7fa;           /* Dark blue/purple header */
+  
+  /* Text Colors - like choosing ink colors for writing */
+  --text-primary: #1a202c;        /* Dark text - main headings */
+  --text-secondary: #4a5568;      /* Gray text - less important info */
+  --text-muted: #718096;          /* Even lighter gray - hints */
+  --text-white: #ffffff;          /* White text on dark backgrounds */
+  
+  /* Border & Shadow - the "frames" around things */
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  
+  /* Spacing - based on 8px grid (8, 16, 24, 32) */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  
+  /* Border Radius - how "rounded" corners are */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Transitions - how fast things change when you hover */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* 
+  ===========================================
+  RESET STYLES
+  ===========================================
+  
+  This is like cleaning the house before decorating.
+  We remove all the browser's default styles so everything
+  looks the same in Chrome, Firefox, Safari, etc.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  /* System fonts - these load fast because they're already on your computer */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 
+               'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 
+               'Helvetica Neue', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 
+  ===========================================
+  ACCESSIBILITY - Making the app usable for everyone
+  ===========================================
+  
+  When someone uses Tab key to navigate (like people who can't use a mouse),
+  we show a nice blue outline so they know where they are.
+*/
+
+:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* 
+  ===========================================
+  UTILITY CLASSES - Reusable helper styles
+  ===========================================
+*/
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Screen reader only - hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

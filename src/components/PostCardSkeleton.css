@@ -1,0 +1,133 @@
+/*
+  ===========================================
+  SKELETON LOADING STYLES
+  ===========================================
+  
+  These styles create the "shimmer" animation effect
+  that makes loading feel smooth and professional.
+*/
+
+/* The shimmer animation - a light wave that moves across */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.skeleton-card {
+  background-color: var(--bg-card);
+  /* Match post card dimensions */
+  width: 100%;
+  min-height: 522px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.skeleton-image {
+  /* Match post card image dimensions */
+  width: 100%;
+  height: 220px;
+  background-color: #e0e0e0;
+}
+
+.skeleton-author {
+  padding: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.skeleton-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.skeleton-author-info {
+  flex: 1;
+}
+
+.skeleton-name {
+  height: 16px;
+  width: 60%;
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-xs);
+}
+
+.skeleton-title {
+  height: 12px;
+  width: 80%;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-category {
+  margin: 0 var(--space-md);
+  height: 24px;
+  width: 80px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.skeleton-line {
+  height: 14px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-date {
+  margin: var(--space-sm) var(--space-md);
+  height: 12px;
+  width: 150px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-footer {
+  padding: var(--space-md);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeleton-stats {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.skeleton-stat {
+  height: 16px;
+  width: 50px;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-actions {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.skeleton-action {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+}
+

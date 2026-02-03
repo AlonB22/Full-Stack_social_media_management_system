@@ -1,0 +1,234 @@
+/*
+  ===========================================
+  POST MODAL STYLES
+  ===========================================
+
+  Styles for the floating modal window that appears
+  when viewing a single post details.
+*/
+
+/* Modal Overlay - Covers entire screen */
+.post-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--space-md);
+  animation: modalFadeIn 0.2s ease-out;
+  backdrop-filter: blur(4px);
+}
+
+/* Modal Content - The actual modal box */
+.post-modal-content {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: modalSlideIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Header */
+.post-modal-header {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+/* Image Header */
+.post-modal-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-modal-image-svg {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.post-modal-category-overlay {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.post-modal-close-btn {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: var(--space-xs);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast);
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.post-modal-close-btn:hover {
+  background-color: white;
+  transform: scale(1.1);
+}
+
+/* Modal Body */
+.post-modal-body {
+  padding: var(--space-xl);
+}
+
+/* Author Section */
+.post-modal-author-section {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.author-avatar-placeholder {
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border-radius: 50px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.post-modal-author-info h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.post-modal-author-title {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: var(--space-xs) 0 0 0;
+}
+
+/* Content Section */
+.post-modal-content-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: var(--space-xl);
+  white-space: pre-wrap;
+}
+
+/* Metadata: Category, Date, Location */
+.post-modal-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.post-modal-tag {
+  background-color: var(--bg-main);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  color: var(--primary-blue);
+}
+
+/* Stats Section */
+.post-modal-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.post-modal-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  background-color: var(--bg-main);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.post-modal-stat-icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--space-sm);
+}
+
+.post-modal-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.post-modal-stat-label {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .post-modal-content {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+  
+  .post-modal-image-container {
+    height: 150px;
+  }
+  
+  .post-modal-category-overlay {
+    font-size: 1.5rem;
+  }
+  
+  .post-modal-body {
+    padding: var(--space-lg);
+  }
+}

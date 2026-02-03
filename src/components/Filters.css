@@ -1,0 +1,183 @@
+/*
+  ===========================================
+  FILTERS STYLES
+  ===========================================
+  
+  Styles for the search and filter section.
+*/
+
+.filters-section {
+  background-color: var(--bg-card);
+  /* Match header: 12px border radius */
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  /* Match header width and alignment */
+  max-width: 1360px;
+  /* Same margins as header: 20px from sides */
+  margin-left: max(20px, calc((100% - 1360px) / 2));
+  margin-right: max(20px, calc((100% - 1360px) / 2));
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+}
+
+.filters-container {
+  /* Grid layout for the filter inputs - 5 columns */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.filter-group {
+  /* Each filter has a label and input stacked vertically */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.filter-label {
+  /* Small text above each input */
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Base styles for text inputs and selects */
+.filter-input,
+.filter-select {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  background-color: var(--bg-card);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  width: 100%;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+/* Search input with icon */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--space-md);
+  color: var(--text-muted);
+  pointer-events: none; /* Icon shouldn't be clickable */
+}
+
+.search-input {
+  padding-left: 40px; /* Make room for the search icon */
+}
+
+/* Placeholder text style */
+.filter-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Dropdown arrow styling for selects */
+.filter-select {
+  appearance: none; /* Remove default arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234a5568' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/*
+  ===========================================
+  FILTER BUTTONS
+  ===========================================
+*/
+
+.filter-actions {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.btn {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background-color var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blue "Apply Filters" button */
+.btn-primary {
+  background-color: var(--primary-blue);
+  color: var(--text-white);
+}
+
+.btn-primary:hover {
+  background-color: #3182ce; /* Darker blue */
+}
+
+/* Gray "Clear All" button */
+.btn-secondary {
+  background-color: #EDF2F7;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-main);
+}
+
+/*
+  ===========================================
+  RESPONSIVE - Tablet and Mobile
+  ===========================================
+*/
+
+@media (max-width: 1024px) {
+  .filters-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .filters-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .filters-section {
+    /* Keep 20px margins on mobile */
+    margin: 20px;
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .filters-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-actions {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
+}
+

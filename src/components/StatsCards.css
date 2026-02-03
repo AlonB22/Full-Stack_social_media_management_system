@@ -1,0 +1,107 @@
+/*
+  ===========================================
+  STATS CARDS STYLES
+  ===========================================
+  
+  Styles for the 4 statistics boxes at the top.
+*/
+
+.stats-section {
+  /* Match header width and alignment */
+  max-width: 1360px;
+  /* Same margins as header: 20px from sides */
+  margin-left: max(20px, calc((100% - 1360px) / 2));
+  margin-right: max(20px, calc((100% - 1360px) / 2));
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  /* Padding for content */
+  padding: 0;
+}
+
+.stats-grid {
+  /* CSS Grid - think of it like a spreadsheet layout */
+  display: grid;
+  
+  /* 
+    This creates 4 equal columns that each take 1 fraction of space
+    repeat(4, 1fr) = "make 4 columns, each taking equal space"
+  */
+  grid-template-columns: repeat(4, 1fr);
+  
+  /* Gap is the space between each card */
+  gap: var(--space-md);
+}
+
+.stat-card {
+  /* White background */
+  background-color: var(--bg-card);
+  
+  /* Padding inside the card */
+  padding: var(--space-lg);
+  
+  /* Match header: 12px border radius */
+  border-radius: 12px;
+  
+  /* Subtle shadow to make it look "lifted" */
+  box-shadow: var(--shadow-sm);
+  
+  /* Smooth transition for hover effect */
+  transition: box-shadow var(--transition-fast);
+}
+
+/* When you hover over a card, the shadow gets bigger */
+.stat-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-label {
+  /* Small gray text for the label */
+  font-size: 0.75rem; /* 12px */
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-sm);
+}
+
+.stat-value {
+  /* Big bold number */
+  font-size: 2rem; /* 32px */
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/*
+  ===========================================
+  RESPONSIVE - Tablet and Mobile
+  ===========================================
+*/
+
+/* Tablet: 2 columns instead of 4 */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 576px) {
+  .stats-section {
+    /* Keep 20px margins on mobile */
+    margin: 20px;
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card {
+    padding: var(--space-md);
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+  }
+}
+

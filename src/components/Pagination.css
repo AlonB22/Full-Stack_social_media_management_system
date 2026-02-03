@@ -1,0 +1,115 @@
+/*
+  ===========================================
+  PAGINATION STYLES
+  ===========================================
+  
+  Styles for the page navigation at the bottom.
+*/
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-sm);
+  /* Match header width and alignment */
+  max-width: 1360px;
+  /* Same margins as header: 20px from sides */
+  margin-left: max(20px, calc((100% - 1360px) / 2));
+  margin-right: max(20px, calc((100% - 1360px) / 2));
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  padding: var(--space-lg) 0;
+}
+
+.pagination-pages {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.pagination-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background-color: var(--bg-main);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Individual page number buttons */
+.pagination-page {
+  min-width: 40px;
+  justify-content: center;
+}
+
+/* Active page button - blue background #4299E1 */
+.pagination-page.active {
+  background-color: #4299E1;
+  border-color: #4299E1;
+  color: var(--text-white);
+}
+
+.pagination-page.active:hover {
+  background-color: #3182ce; /* Slightly darker blue on hover */
+  border-color: #3182ce;
+  color: var(--text-white);
+}
+
+/* Ellipsis (...) */
+.pagination-ellipsis {
+  padding: var(--space-sm);
+  color: var(--text-muted);
+}
+
+/* Focus state for accessibility */
+.pagination-btn:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
+
+/* Prevent page jumping when pagination buttons are clicked */
+.pagination-btn:focus {
+  /* Prevent browser from auto-scrolling to focused element */
+  scroll-margin: 0;
+}
+
+/*
+  ===========================================
+  RESPONSIVE
+  ===========================================
+*/
+
+@media (max-width: 576px) {
+  .pagination {
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  
+  .pagination-nav span {
+    /* Hide text, show only arrows on mobile */
+    display: none;
+  }
+  
+  .pagination-page {
+    min-width: 36px;
+    padding: var(--space-sm);
+  }
+}
+

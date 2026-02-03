@@ -1,0 +1,158 @@
+/*
+  ===========================================
+  HEADER STYLES
+  ===========================================
+  
+  This file contains all the "paint and decorations" 
+  specifically for the Header component.
+*/
+
+.header {
+  /* White background like a card */
+  background-color: var(--bg-card);
+  /* Exact dimensions from design */
+  max-width: 1360px;
+  min-height: 106px;
+  /* Position: 20px from top and sides */
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0;
+  /* On wide screens, center it with auto margins but keep max-width */
+  /* This calc ensures 20px margin on screens wider than 1400px */
+  margin-left: max(20px, calc((100% - 1360px) / 2));
+  margin-right: max(20px, calc((100% - 1360px) / 2));
+  /* Rounded corners: 12px */
+  border-radius: 12px;
+  /* Padding inside for content spacing */
+  padding: var(--space-lg);
+  /* Subtle shadow to make it "float" */
+  box-shadow: var(--shadow-sm);
+  /* Display flex to vertically center content */
+  display: flex;
+  align-items: center;
+}
+
+.header-container {
+  /* Take full width of the header */
+  width: 100%;
+  /* Flexbox - this is how we put things side by side */
+  display: flex;
+  /* justify-content: space-between puts items at opposite ends */
+  justify-content: space-between;
+  /* align-items: center makes them vertically centered */
+  align-items: center;
+  /* Allow wrapping on small screens */
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.header-content {
+  /* Let the title area grow to fill available space */
+  flex: 1;
+}
+
+.header-title {
+  /* White text on dark background */
+  color: var(--text-primary);
+  /* Font size - larger for the main title */
+  font-size: 1.75rem; /* 28px */
+  font-weight: 700;
+  /* Remove default margin */
+  margin: 0;
+}
+
+.header-subtitle {
+  /* Slightly transparent white for secondary text */
+  color: var(--text-primary);
+  font-size: 0.875rem; /* 14px */
+  margin-top: var(--space-xs);
+}
+
+/* 
+  The green "Add New Post" button
+*/
+.add-post-button {
+  /* Green background color from design */
+  background-color: var(--primary-green);
+  color: var(--text-white);
+  
+  /* Remove default button border */
+  border: none;
+  
+  /* Exact dimensions from design */
+  width: 168.125px;
+  height: 47px;
+  border-radius: 8px;
+  opacity: 1;
+  
+  /* Font styling */
+  font-size: 0.875rem;
+  font-weight: 600;
+  
+  /* Make button clickable with pointer cursor */
+  cursor: pointer;
+  
+  /* Flexbox to align icon and text */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  
+  /* Smooth color change when hovering */
+  transition: background-color var(--transition-fast);
+}
+
+/* Custom plus icon */
+.add-post-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* When you hover over the button, it gets darker */
+.add-post-button:hover {
+  background-color: #38a169; /* Darker green */
+}
+
+/* When button is focused (keyboard navigation) */
+.add-post-button:focus-visible {
+  outline: 2px solid var(--text-white);
+  outline-offset: 2px;
+}
+
+/*
+  ===========================================
+  RESPONSIVE DESIGN - Making it work on phones
+  ===========================================
+  
+  @media is like saying "when the screen is smaller than 768px, 
+  use these different styles instead"
+*/
+
+@media (max-width: 768px) {
+  .header {
+    /* Keep 20px margins on mobile but allow height to grow */
+    margin: 20px;
+    margin-bottom: 0;
+    min-height: auto;
+    padding: var(--space-md);
+  }
+  
+  .header-container {
+    /* On mobile, stack things vertically */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-title {
+    font-size: 1.5rem; /* Smaller on mobile */
+  }
+  
+  .add-post-button {
+    /* Make button full width on mobile */
+    width: 100%;
+    justify-content: center;
+  }
+}
+

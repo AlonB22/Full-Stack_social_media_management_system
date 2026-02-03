@@ -1,0 +1,29 @@
+/*
+  ===========================================
+  APP LAYOUT STYLES
+  ===========================================
+  
+  These are the overall layout styles for the whole app.
+*/
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  /* Push content down a bit from the header */
+  padding-bottom: var(--space-xl);
+}
+
+/*
+  ===========================================
+  SPACING BETWEEN SECTIONS
+  ===========================================
+*/
+
+.main-content > *:not(:first-child) {
+  margin-top: var(--space-lg);
+}

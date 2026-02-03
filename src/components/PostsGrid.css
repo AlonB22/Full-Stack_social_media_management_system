@@ -1,0 +1,101 @@
+/*
+  ===========================================
+  POSTS GRID STYLES
+  ===========================================
+  
+  Layout styles for the grid of post cards.
+*/
+
+.posts-section {
+  /* Exact width from design */
+  max-width: 1360px;
+  width: 1360px;
+  /* Min height from design (content can make it taller) */
+  min-height: 522px;
+  /* 20px from left side */
+  margin-left: max(20px, calc((100% - 1360px) / 2));
+  margin-right: max(20px, calc((100% - 1360px) / 2));
+  /* Spacing from filter section above */
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.posts-grid {
+  /* CSS Grid - creates a flexible grid of cards */
+  display: grid;
+  
+  /* Exactly 3 columns as per design */
+  grid-template-columns: repeat(3, 1fr);
+  
+  /* Gap between cards (1360 - 3*437.34 = ~48px total, so ~24px between) */
+  gap: 24px;
+}
+
+/*
+  ===========================================
+  EMPTY STATE
+  ===========================================
+  
+  When there are no posts to show, we display this friendly message.
+*/
+
+.empty-state {
+  text-align: center;
+  padding: calc(var(--space-xl) * 2);
+  background-color: var(--bg-card);
+  /* Match header: 12px border radius */
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+}
+
+.empty-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.empty-message {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/*
+  ===========================================
+  RESPONSIVE
+  ===========================================
+*/
+
+@media (max-width: 1400px) {
+  .posts-section {
+    /* On smaller screens, use full width minus margins */
+    width: auto;
+    max-width: 1360px;
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-section {
+    /* Keep 20px margins on mobile */
+    margin: 20px;
+    margin-top: var(--space-lg);
+    margin-bottom: 0;
+    min-height: auto;
+    width: auto;
+  }
+  
+  .posts-grid {
+    /* On mobile, single column */
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+}
+

@@ -1,0 +1,54 @@
+/*
+  ===========================================
+  DELETE CONFIRMATION MODAL STYLES
+  ===========================================
+*/
+
+.delete-modal-content {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 350px; /* Smaller width for confirmation */
+  padding: var(--space-lg);
+  animation: modalSlideIn 0.3s ease-out;
+  text-align: center;
+}
+
+.delete-modal-header {
+  margin-bottom: var(--space-lg);
+}
+
+.delete-modal-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.delete-modal-footer {
+  display: flex;
+  justify-content: center; /* Center buttons */
+  gap: var(--space-md);
+}
+
+.btn-danger {
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #c53030;
+}
+
+.btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
