@@ -28,6 +28,9 @@ python data_processing.py
 ```
 *Note: Ensure `social_media_posts_data.csv` is located in the root directory (one level up from backend).*
 
+**Repo note:** `backend/social_media.db` is intentionally excluded from Git (see `.gitignore`).
+Run the script above to generate it locally.
+
 ### 4. Frontend Setup
 ```bash
 # Navigate to the root directory
